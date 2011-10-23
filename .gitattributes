@@ -33,6 +33,8 @@
 /cmds-cantemp.h -text
 /cmds-flash.c -text
 /cmds-flash.h -text
+/cmds-gateway.c -text
+/cmds-gateway.h -text
 /cmds-mood.c -text
 /cmds-mood.h -text
 /cmds-musicd.c -text
@@ -47,6 +49,7 @@
 /cmds-treppenblink.h -text
 /config.h -text
 /configure.in -text
+/crc16.c -text
 /debug.c -text
 /debug.h -text
 /lap.c -text
