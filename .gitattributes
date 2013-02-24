@@ -19,6 +19,7 @@
 /can-uart.c -text
 /can-uart.h -text
 /can.h -text
+/can_message_converters.c -text
 /cansole.c -text
 /cansole.h -text
 /cmds-base.c -text
