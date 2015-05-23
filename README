@@ -3,10 +3,12 @@ How to compile
 
 1) git clone --recursive https://github.com/das-labor/labcontrol.git
 
-2) cd lapcontrol
+2) git submodule update --init --recursive
 
-3) ./bootstrap.sh
+3) cd lapcontrol
 
-4) ./configure
+4) ./bootstrap.sh
 
-5) make
+5) ./configure
+
+6) make
