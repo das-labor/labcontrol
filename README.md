@@ -1,7 +1,7 @@
 How to compile
 ==============
 
-1) git clone --recursive https://github.com/das-labor/lapcontrol.git
+1) git clone --recursive https://github.com/das-labor/labcontrol.git
 
 2) cd lapcontrol
 
