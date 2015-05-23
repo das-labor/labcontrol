@@ -4,11 +4,11 @@
 #include <string.h>
 #include <time.h>
 
-#include "lib-host/can.h"
-#include "lib/lap.h"
+#include "libmicro/can.h"
+#include "libmicro/lap.h"
 
 #include "cmds-flash.h"
-#include "lib-host/debug.h"
+#include "libmicro/debug.h"
 
 /*
     * : is the colon that starts every Intel HEX record.

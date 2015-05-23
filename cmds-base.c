@@ -5,10 +5,10 @@
 #include <unistd.h>
 
 
-#include "lib-host/can.h"
-#include "lib-host/debug.h"
+#include "libmicro/can.h"
+#include "libmicro/debug.h"
 
-#include "lib/lap.h"
+#include "libmicro/lap.h"
 #include "cmds-base.h"
 
 

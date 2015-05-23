@@ -4,8 +4,8 @@
 #include <time.h>
 #include <errno.h>
 
-#include <lib-host/can.h>
-#include <lib/lap.h>
+#include <libmicro/can.h>
+#include <libmicro/lap.h>
 
 #include "cmds-borg.h"
 

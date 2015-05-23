@@ -6,7 +6,7 @@
 #include <sys/ioctl.h>
 #include <fcntl.h>
 
-#include "lib-host/can.h"
+#include "libmicro/can.h"
 #include "cansole/client/termio.h"
 
 int mytty;

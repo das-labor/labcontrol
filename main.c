@@ -10,10 +10,10 @@
 
 
 #include "config.h"
-#include "lib-host/can.h"
-#include "lib-host/can-tcp.h"
-#include "lib-host/can-uart.h"
-#include "lib-host/debug.h"
+#include "libmicro/can.h"
+#include "libmicro/can-tcp.h"
+#include "libmicro/can-uart.h"
+#include "libmicro/debug.h"
 
 #include "cansole.h"
 #include "cmds-base.h"
