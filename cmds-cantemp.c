@@ -8,7 +8,7 @@
 #include <libmicro/lap.h>
 
 #include "cmds-cantemp.h"
-#include "libmicro/debug.h"
+#include <libmicro/debug.h>
 
 
 

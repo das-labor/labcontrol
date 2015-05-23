@@ -6,8 +6,8 @@
 #include <sys/ioctl.h>
 #include <fcntl.h>
 
-#include "libmicro/can.h"
-#include "cansole/client/termio.h"
+#include <libmicro/can.h>
+#include <libmicro/termio.h>
 
 int mytty;
 

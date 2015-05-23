@@ -4,9 +4,9 @@
 #include <time.h>
 #include <errno.h>
 
-#include "libmicro/can.h"
-#include "libmicro/lap.h"
-#include "libmicro/debug.h"
+#include <libmicro/can.h>
+#include <libmicro/lap.h>
+#include <libmicro/debug.h>
 
 #include "cmds-powermeter.h"
 

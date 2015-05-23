@@ -5,8 +5,8 @@
 #include <time.h>
 #include <errno.h>
 
-#include "libmicro/can.h"
-#include "libmicro/lap.h"
+#include <libmicro/can.h>
+#include <libmicro/lap.h>
 
 #include "cmds-bastel.h"
 #include "Bastelcmd.h"

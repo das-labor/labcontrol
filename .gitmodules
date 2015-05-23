@@ -1,0 +1,3 @@
+[submodule "libmicro"]
+	path = libmicro
+	url = https://github.com/das-labor/libmicro.git

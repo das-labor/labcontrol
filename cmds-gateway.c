@@ -4,8 +4,8 @@
 #include <time.h>
 #include <errno.h>
 
-#include "libmicro/can-encap.h"
-#include "libmicro/can.h"
+#include <libmicro/can-encap.h>
+#include <libmicro/can.h>
 
 #define DEFAULT_TIMEOUT 2000
 #define ADC_RES ((double)(1<<10))
