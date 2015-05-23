@@ -5,7 +5,7 @@ How to compile
 
 2) git submodule update --init --recursive
 
-3) cd lapcontrol
+3) cd labcontrol
 
 4) ./bootstrap.sh
 
