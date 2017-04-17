@@ -89,15 +89,14 @@ void help()
 {
 	cmd_t *ncmd;
 
-	printf("\nUsage: %s [OPTIONS] <COMMAND>\n", progname);
-	printf("\n\
-Options:\n\n\
-   -h, --help              display this help and exit\n\
-   -v, --verbose           be more verbose and display a CAN packet dump\n\
-   -s, --server HOST       use specified server (default: localhost)\n\
-   -p, --port PORT         use specified TCP/IP port (default: 2342)\n\
-   -S, --serial PORT       use specified serial port\n\n\
-Commands:\n\n" );
+	printf ("\nUsage: %s [OPTIONS] <COMMAND>\n", progname);
+	puts (	"\nOptions:\n\n"
+		"   -h, --help              display this help and exit\n"
+		"    -v, --verbose           be more verbose and display a CAN packet dump\n"
+		"   -s, --server HOST       use specified server (default: localhost)\n"
+		"   -p, --port PORT         use specified TCP/IP port (default: 2342)\n"
+		"   -S, --serial PORT       use specified serial port\n\n"
+		"Commands:\n");
 
 	ncmd = cmds;
 	while(ncmd->fkt) {
@@ -113,7 +112,7 @@ Commands:\n\n" );
 int main(int argc, char *argv[])
 {
 	char *tcpport  = "2342";         // TCP Port
-	char *server = "localhost";
+	char *server = "localhost";	//Sieht kaputt aus
 	char *serial = NULL;
 	int optc;
 
@@ -147,7 +146,7 @@ int main(int argc, char *argv[])
 				exit(EXIT_FAILURE);
 		}
 	} // while
-	cann_conn_t *conn;
+	cann_conn_t *conn = NULL;
 
 	//init debugging to console, otherwise we'll experience crashes...
 	debug_init(NULL);
@@ -186,8 +185,10 @@ int main(int argc, char *argv[])
 disconnect:
 	//cann_close(0);
 	usleep(1000); //sleep a little, so last data on socket can be sent before closing
-	close(conn->fd);
-	//cann_close_errors();
+	if (conn) {
+		close(conn->fd);
+		//cann_close_errors();
+	}
 	free(conn);
 done:
 	debug_close();
