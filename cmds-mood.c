@@ -22,7 +22,7 @@ typedef struct {
 void cmd_mood_set(int argc, char *argv[]);
 
 cmd_t mood_cmds[] = {
-  { &cmd_mood_set, "set", "mood set <addr> <module> <r> <g> <b>", "Set RGB (0-255)" },
+  { &cmd_mood_set, "set", "mood set <addr> <module> <r> <g> <b> <aux>", "Set RGB (0=on - 255=off), module is always 0" },
   { NULL, NULL, NULL, NULL }
 };
 
@@ -38,7 +38,7 @@ void cmd_mood_set(int argc, char *argv[])
 	pdo_message *msg;
 	int i;
 
-	if (argc != 3) goto argerror;
+	if (argc != 7) goto argerror;
 
 	msg = (pdo_message *)can_buffer_get();
 
