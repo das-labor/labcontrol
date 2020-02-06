@@ -169,13 +169,15 @@ void cmd_borg_blm(int argc, char *argv[]){
 	fclose (blm);
 	blm_frame_send(bmp);
 	usleep (duration*1000);
-	return 0;
+	//return 0;
+	return;
 
  blerror:
 	fprintf (stderr, "Error parsing BlinkenLights movie '%s' (line %d).\n",
 					 filename, lc);
 	fclose (blm);
-	return -1;
+	//return -1;
+	return;
 argerror:
 	debug(0, "borg mode <addr> <number>");
 
