@@ -7,6 +7,8 @@
 #include <libmicro/can-encap.h>
 #include <libmicro/can.h>
 
+#include "cmds.h"
+
 #define DEFAULT_TIMEOUT 2000
 #define ADC_RES ((double)(1<<10))
 #define ADC_REF_MV 5000.0
@@ -14,16 +16,6 @@
 #define VOLTAGE_DIVIDER_R2 1000.0
 #define VSHUNT_AMPLIFICATION 10.0
 #define SHUNT_OHMS 0.01
-
-/**
- * Available commands array
- */
-typedef struct {
-	void (*fkt)(int, char**);
-	char *cmd;
-	char *sig;
-	char *desc;
-} cmd_t;
 
 
 static void send_gateway_command(uint8_t cmd, uint8_t *data, uint8_t len)

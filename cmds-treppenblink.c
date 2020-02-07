@@ -7,6 +7,8 @@
 #include <libmicro/can.h>
 #include <libmicro/lap.h>
 
+#include "cmds.h"
+
 #include "cmds-treppenblink.h"
 
 
@@ -46,17 +48,6 @@ argerror:
 	printf("\t 0x07 \t - epi\n");
 
 }
-
-/**
- * Available commands array
- */
-typedef struct {
-	void (*fkt)(int, char**);
-	char *cmd;
-	char *sig;
-	char *desc;
-} cmd_t;
-
 
 cmd_t treppenblink_cmds[] = {
   { &cmd_treppenblink_mode, "mode", "mode", "switch treppenblink to mode" },

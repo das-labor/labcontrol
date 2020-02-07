@@ -4,6 +4,8 @@
 
 #include <libmicro/can.h>
 
+#include "cmds.h"
+
 #define LOOPBACK_MSGCOUNT 100
 
 void test_loopback(int argc, char **argv)
@@ -35,18 +37,6 @@ void test_loopback(int argc, char **argv)
 	printf( "* Deactivating loopback mode\n" );
 	can_setmode(loopback);
 }
-
-
-
-/**
- * Available commands array
- */
-typedef struct {
-	void (*fkt)(int, char**);
-	char *cmd;
-	char *sig;
-	char *desc;
-} cmd_t;
 
 cmd_t test_cmds[] = {
   { &test_loopback, "loopback", "loopback", "Loopback test" },

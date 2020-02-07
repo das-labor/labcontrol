@@ -5,17 +5,8 @@
 #include <libmicro/debug.h>
 #include <libmicro/lap.h>
 
+#include "cmds.h"
 #include "cmds-mood.h"
-
-/**
- * Available commands array
- */
-typedef struct {
-	void (*fkt)(int, char**);
-	char *cmd;
-	char *sig;
-	char *desc;
-} cmd_t;
 
 void cmd_mood_set(int argc, char *argv[]);
 void cmd_mood_cycle(int argc, char *argv[]);

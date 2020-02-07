@@ -8,6 +8,8 @@
 #include <libmicro/lap.h>
 #include <libmicro/debug.h>
 
+#include "cmds.h"
+
 #include "cmds-borg.h"
 
 
@@ -246,12 +248,6 @@ argerror:
 /**
  * Available commands array
  */
-typedef struct {
-	void (*fkt)(int, char**);
-	char *cmd;
-	char *sig;
-	char *desc;
-} cmd_t;
 
 
 cmd_t borg_cmds[] = {

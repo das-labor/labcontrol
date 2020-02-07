@@ -7,6 +7,8 @@
 #include <libmicro/can.h>
 #include <libmicro/lap.h>
 
+#include "cmds.h"
+
 #include "cmds-canir.h"
 
 
@@ -85,16 +87,6 @@ argerror:
 	printf("\t 0x06 \t - blank\n");
 
 }
-
-/**
- * Available commands array
- */
-typedef struct {
-	void (*fkt)(int, char**);
-	char *cmd;
-	char *sig;
-	char *desc;
-} cmd_t;
 
 
 cmd_t canir_cmds[] = {
