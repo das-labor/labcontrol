@@ -1,10 +1,8 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-#include <time.h>
-#include <errno.h>
 
 #include <libmicro/can.h>
+#include <libmicro/debug.h>
 #include <libmicro/lap.h>
 
 #include "cmds-mood.h"
@@ -20,18 +18,50 @@ typedef struct {
 } cmd_t;
 
 void cmd_mood_set(int argc, char *argv[]);
+void cmd_mood_cycle(int argc, char *argv[]);
 
 cmd_t mood_cmds[] = {
-  { &cmd_mood_set, "set", "mood set <addr> <module> <r> <g> <b> <aux>", "Set RGB (0=on - 255=off), module is always 0" },
-  { NULL, NULL, NULL, NULL }
+  { &cmd_mood_set, "set", "mood set <addr> <module> <r> <g> <b> <aux>", "Set RGB (0=on - 255=off), module is always 0. turn off cycle first!" },
+  { &cmd_mood_cycle, "cycle", "mood cycle <addr> <on|off>", "control automatic color cycle" }
 };
 
+void cmd_mood_cycle(int argc, char *argv[])
+{
+    pdo_message *msg;
+    int i;
 
-/**
- * Available commands array
- */
+    if (argc != 3) goto argerror;
 
+    msg = (pdo_message *)can_buffer_get();
 
+    msg->addr_src = 0x00;
+    msg->addr_dst = 0x00;
+    msg->port_src = PORT_MOOD;
+    msg->port_dst = PORT_MOOD;
+    msg->dlc      = 2;
+    msg->cmd      = FKT_MOOD_ONOFF;
+    msg->data[0]  = 0;
+
+    // dst
+    if (sscanf(argv[1], "%x", &i) != 1)
+        goto argerror;
+    msg->addr_dst = i;
+
+    // on/off
+    if (strcmp(argv[2], "on") == 0)
+        msg->data[0] = 1;
+    else if (strcmp(argv[2], "off") == 0)
+        msg->data[0] = 0;
+    else
+        goto argerror;
+
+    can_transmit((can_message*)msg);
+
+    return;
+
+    argerror:
+    debug(0, "%s", mood_cmds[0].sig);
+}
 
 void cmd_mood_set(int argc, char *argv[])
 {
