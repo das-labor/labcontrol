@@ -6,6 +6,7 @@
 
 #include <libmicro/can.h>
 #include <libmicro/lap.h>
+#include <libmicro/debug.h>
 
 #include "cmds-borg.h"
 
@@ -239,7 +240,7 @@ void cmd_borg_scroll(int argc, char *argv[])
 	return;
 
 argerror:
-	debug(0, "borg scroll <addr> <number>");
+	debug(0, "borg scroll <addr> <text>");
 };
 
 /**
