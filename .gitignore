@@ -9,5 +9,6 @@
 /depcomp
 /install-sh
 /missing
+/INSTALL
 
 *.o
