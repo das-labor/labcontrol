@@ -7,6 +7,9 @@ AM_INIT_AUTOMAKE
 #AC_CONFIG_SRCDIR([proto_lampe.c])
 #AC_CONFIG_HEADERS([config.h])
 
+AC_PROG_RANLIB
+#AM_PROG_AR
+
 # Checks for programs.
 AC_PROG_CC
 
