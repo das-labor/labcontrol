@@ -34,7 +34,7 @@ static rs232can_msg* anticipate_gateway_reply(uint8_t cmd)
 	rs232can_msg *rmsg_in;
 	unsigned int i = 0;
 	//anticipate reply and timeout after 2s
-	while(((rmsg_in = can_get_raw_gateway_message_nb()) == NULL || rmsg_in->cmd != cmd) && i++ < DEFAULT_TIMEOUT) usleep(1000);
+	while(((rmsg_in = can_get_raw_gateway_message_nb()) == NULL && rmsg_in->cmd != cmd) && i++ < DEFAULT_TIMEOUT) usleep(1000);
 	return (i<DEFAULT_TIMEOUT)?rmsg_in:NULL;
 }
 
