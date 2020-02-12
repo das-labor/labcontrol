@@ -34,24 +34,23 @@ NameValue nametovalue[] = {
 
 	{SWL_TAFEL,"LAMP_TAFEL","(O) wenn SW, dann Lampe an der Tafel"},
 	{SWL_BEAMER,"LAMP_BEAMER","(O) wenn SW, dann Lampe am Beamer"},
-
 	{SWL_SCHRANK,"LAMP_SCHRANK","(O) wenn SW, dann Lampe bei den Schraenken"},
-	{SWL_FLIPPER,"LAMP_FLIPPER","(O) wenn SW, dann Lampe am Flipper"},
+	{SWL_COUCH,"LAMP_COUCH","(O) wenn SW, dann Lampe an der Couch"},
 
 	{SWL_LOUNGE,"LAMP_LOUNGE","(O) wenn SW, dann Lampe in der Lounge"},
 	{SWL_KUECHE,"LAMP_KUECHE","(O) wenn SW, dann Lampe in der Kueche"},
 
 	{SWA_BEAMER,"PROJEKTOR","(O) wenn SW, den Beamer"},
 
-	{PWM_TAFEL,"TAFEL","\t(O) wenn PWM, dann Helligkeit der Tafellampe 0x00=hell, 0xff=dunkel"},
-	{PWM_BEAMER,"BEAMER","\t(O) wenn PWM, dann Helligkeit der Beamerlampe 0x00=hell, 0xff=dunkel"},
-	{PWM_SCHRANK,"SCHRANK","(O) wenn PWM, dann Helligkeit der Schranklampe 0x00=hell, 0xff=dunkel"},
-	{PWM_FLIPPER,"FLIPPER","(O) wenn PWM, dann Helligkeit der Flipperlampe 0x00=hell, 0xff=dunkel"},
+	{PWM_TAFEL,"TAFEL","\t(O) wenn PWM, dann Helligkeit der Tafellampe 0x00=dunkel, 0xff=hell"},
+	{PWM_BEAMER,"BEAMER","\t(O) wenn PWM, dann Helligkeit der Beamerlampe 0x00=dunkel, 0xff=hell"},
+	{PWM_SCHRANK,"SCHRANK","(O) wenn PWM, dann Helligkeit der Schranklampe 0x00=dunkel, 0xff=hell"},
+	{PWM_COUCH,"COUCH","(O) wenn PWM, dann Helligkeit der Couchlampe 0x00=dunkel, 0xff=hell"},
 
-	{PWM_LOUNGE,"LOUNGE","\t(O) wenn PWM, dann Helligkeit in der Lounge 0x00=hell, 0xff=dunkel"},
-	{PWM_KUECHE,"KUECHE","\t(O) wenn PWM, dann Helligkeit in der Kueche 0x00=hell, 0xff=dunkel"},
+	{PWM_LOUNGE,"LOUNGE","\t(O) wenn PWM, dann Helligkeit in der Lounge 0x00=hell, 0xff=dunkel (TODO richtigrum?)"},
+	{PWM_KUECHE,"KUECHE","\t(O) wenn PWM, dann Helligkeit in der Kueche 0x00=hell, 0xff=dunkel (TODO richtigrum?)"},
 
-	{VIRT_VORTRAG_PWM,"VORTRAG_PWM","\t(O) wenn VIRT, dann Helligkeit aller Lampen im Vortragsraum 0x00=hell, 0xff=dunkel"},
+	{VIRT_VORTRAG_PWM,"VORTRAG_PWM","\t(O) wenn VIRT, dann Helligkeit aller Lampen im Vortragsraum 0x00=dunkel, 0xff=hell"},
 	{VIRT_VORTRAG,"VORTRAG","\t(O) wenn VIRT, dann alle Lampen im Vortragsraum"},
 
 	{D_NDEF,"D_NDEF","\tDummyObjekt -  nicht verwenden macht nur sorgen ;)"},
@@ -72,10 +71,10 @@ void cmd_powercommander_help() {
 	}
 	puts (	"\nBeispiel: 'labcontrol powercommander SW LAMP_TAFEL OFF 0x00'\n"
 		"\t- schalte die tafellampe aus - das 0x00 am ende muss sein\n"
-		"Beispiel: 'labcontrol powercommander SW LAMP_FLIPPER ON 0x00'\n"
-		"\t- schalte die flipperlampe ein - das 0x00 am ende muss sein\n"
-		"Beispiel: 'labcontrol powercommander PWM FLIPPER SET 0x00'\n"
-		"\t- schalte die flipperlampe auf volle Helligkeit\n"
+		"Beispiel: 'labcontrol powercommander SW LAMP_COUCH ON 0x00'\n"
+		"\t- schalte die couchlampe ein - das 0x00 am ende muss sein\n"
+		"Beispiel: 'labcontrol powercommander PWM COUCH SET 0x00'\n"
+		"\t- schalte die couchlampe auf volle Helligkeit\n"
 		"Beispiel: 'labcontrol powercommander PWM SCHRANK SET 0xff'\n"
 		"\t- schalte die Helligkeit der Schranklampe auf niedrigste Stufe");
 }

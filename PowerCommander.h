@@ -65,7 +65,7 @@
 #define SWL_TAFEL       (O_SW08)
 #define SWL_BEAMER      (O_SW09)
 #define SWL_SCHRANK     (O_SW10)
-#define SWL_FLIPPER     (O_SW11)
+#define SWL_COUCH       (O_SW11)
 #define SWL_LOUNGE      (O_SW03)
 #define SWL_KUECHE      (O_SW00)
 #define SWL_VORTRAG     (O_SW02)
@@ -102,7 +102,7 @@
 #define PWM_TAFEL    (O_PWM00)
 #define PWM_BEAMER   (O_PWM01)
 #define PWM_SCHRANK  (O_PWM02)
-#define PWM_FLIPPER  (O_PWM03)
+#define PWM_COUCH    (O_PWM03)
 #define PWM_LOUNGE   (O_PWM04)
 #define PWM_KUECHE   (O_PWM05)
 
