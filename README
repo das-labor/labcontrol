@@ -1,14 +1,22 @@
 How to compile
 ==============
 
-1) git clone --recursive https://github.com/das-labor/labcontrol.git
+`git clone --recursive https://github.com/das-labor/labcontrol.git`
 
-2) git submodule update --init --recursive
+`git submodule update --init --recursive`
 
-3) cd labcontrol
+## Meson
 
-4) ./bootstrap.sh
+```
+meson setup <build dir>
+cd <build dir>
+meson compile
+```
 
-5) ./configure
+## Autotools
 
-6) make
+1) ./bootstrap.sh
+
+2) ./configure
+
+3) make
