@@ -1,3 +1,0 @@
-lib https://www.das-labor.org/storage/Laborlibmicro/lib
-libmicro https://www.das-labor.org/storage/Laborlibmicro/libmicro
-cansole -r 3123 https://www.das-labor.org/svn/microcontroller/src-host/src/cansole
