@@ -37,6 +37,9 @@
  #define max(a,b) (((a) > (b)) ? (a) : (b))
 #endif
 
+// can-posix.c
+void can_init_posix(cann_conn_t *aconn);
+
 /**
  * Available commands array
  */

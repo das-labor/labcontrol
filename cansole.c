@@ -5,6 +5,7 @@
 #include <signal.h>
 #include <sys/ioctl.h>
 #include <fcntl.h>
+#include <unistd.h>
 
 #include <libmicro/can.h>
 #include <libmicro/termio.h>

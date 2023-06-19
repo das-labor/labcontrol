@@ -3,12 +3,15 @@
 #include <string.h>
 #include <time.h>
 #include <errno.h>
+#include <unistd.h>
+#include <ctype.h>
 
 #include <libmicro/can.h>
 #include <libmicro/lap.h>
 #include <libmicro/debug.h>
 
 #include "cmds.h"
+#include "blutils.h"
 
 #include "cmds-borg.h"
 

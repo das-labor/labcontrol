@@ -3,6 +3,7 @@
 #include <string.h>
 #include <time.h>
 #include <errno.h>
+#include <unistd.h>
 
 #include <libmicro/can-encap.h>
 #include <libmicro/can.h>
