@@ -20,7 +20,7 @@ void cansole_exit (int in_signal)
         exit (in_signal);
 }
 
-cmd_cansole (int argc, char* argv[])
+void cmd_cansole (int argc, char* argv[])
 {
 	uint8_t tmpchar = 0x00;
 	can_message_raw *tmpmsg;
